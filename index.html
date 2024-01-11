@@ -8,24 +8,29 @@
   <body>
     <form>
       <div>
-        <label for="email">Enter an email address: </label>
-        <input type="email" id="email" name="email" />
+        <label for="email">Enter an email address*: </label>
+        <input type="email" id="email" name="email" required />
       </div>
       <div>
-        <label for="country">Enter a country: </label>
-        <input type="text" id="country" name="country" />
+        <label for="country">Enter a country*: </label>
+        <input type="text" id="country" name="country" required />
       </div>
       <div>
-        <label for="ZIP">ZIP code: </label>
-        <input type="text" id="ZIP" name="zip" />
+        <label for="ZIP">ZIP code*: </label>
+        <input type="text" id="ZIP" name="zip" required />
       </div>
       <div>
-        <label for="pwd">Enter a password: </label>
-        <input type="text" id="pwd" name="pwd" />
+        <label for="pwd">Enter a password*: </label>
+        <input type="text" id="pwd" name="pwd" required />
       </div>
       <div>
-        <label for="confirmation-pwd">Confirm the password: </label>
-        <input type="text" id="confirmation-pwd" name="confirmation-pwd" />
+        <label for="confirmation-pwd">Confirm the password*: </label>
+        <input
+          type="text"
+          id="confirmation-pwd"
+          name="confirmation-pwd"
+          required
+        />
       </div>
       <button>Submit</button>
     </form>
