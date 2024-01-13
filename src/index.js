@@ -7,10 +7,16 @@ import './style.css';
   const country = document.getElementById('country');
   const ZIP = document.getElementById('ZIP');
   const ZIPerror = document.querySelector('#ZIP + span');
+  const pwd = document.getElementById('pwd');
+  const pwdError = document.querySelector('#pwd + span');
+  const confirmationPwd = document.getElementById('confirmation-pwd');
+  const confirmationPwdError = document.querySelector(
+    '#confirmation-pwd + span',
+  );
 
   function showEmailError() {
     if (email.validity.valueMissing) {
-      emailError.textContent = 'You need to enter an email address';
+      emailError.textContent = 'Email address is required';
     } else if (email.validity.typeMismatch) {
       emailError.textContent = 'Entered value needs to be an email address';
     } else if (email.validity.tooShort) {
@@ -24,7 +30,7 @@ import './style.css';
 
   function showZIPerror(constraints, countryValue) {
     if (ZIP.validity.valueMissing) {
-      ZIPerror.textContent = 'You need to enter a ZIP code';
+      ZIPerror.textContent = 'ZIP code is required';
     } else {
       ZIPerror.textContent = `${constraints[countryValue][1]}`;
     }
@@ -67,6 +73,41 @@ import './style.css';
     }
   }
 
+  function showPasswordError() {
+    if (pwd.validity.valueMissing && confirmationPwd.validity.valueMissing) {
+      pwdError.textContent = 'Password is required';
+      confirmationPwdError.textContent =
+        'Confirmation password is also required';
+    } else {
+      pwdError.textContent = 'Passwords do not match';
+      confirmationPwdError.textContent = 'Passwords do not match';
+    }
+    pwd.className = 'invalid';
+    confirmationPwd.className = 'invalid';
+    pwdError.className = 'error active';
+    confirmationPwdError.className = 'error active';
+    pwd.setCustomValidity('empty');
+    confirmationPwd.setCustomValidity('empty');
+  }
+
+  function checkPasswords() {
+    if (
+      (pwd.value.length > 0 || confirmationPwd.value > 0) &&
+      pwd.value === confirmationPwd.value
+    ) {
+      pwd.className = '';
+      confirmationPwd.className = '';
+      pwdError.textContent = '';
+      confirmationPwdError.textContent = '';
+      pwdError.className = 'error';
+      confirmationPwdError.className = 'error';
+      pwd.setCustomValidity('');
+      confirmationPwd.setCustomValidity('');
+    } else {
+      showPasswordError();
+    }
+  }
+
   email.addEventListener('input', () => {
     if (email.validity.valid) {
       email.className = '';
@@ -81,6 +122,10 @@ import './style.css';
 
   ZIP.addEventListener('input', checkZIP);
 
+  pwd.addEventListener('input', checkPasswords);
+
+  confirmationPwd.addEventListener('input', checkPasswords);
+
   form.addEventListener('submit', (e) => {
     if (!email.validity.valid) {
       showEmailError();
@@ -89,6 +134,11 @@ import './style.css';
 
     if (!ZIP.validity.valid) {
       checkZIP();
+      e.preventDefault();
+    }
+
+    if (!pwd.validity.valid || !confirmationPwd.validity.valid) {
+      checkPasswords();
       e.preventDefault();
     }
   });
