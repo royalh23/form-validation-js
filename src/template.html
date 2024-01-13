@@ -10,18 +10,22 @@
       <div>
         <label for="email">Enter an email address*: </label>
         <input type="email" id="email" name="email" required />
+        <span class="error" aria-live="polite"></span>
       </div>
       <div>
         <label for="country">Enter a country*: </label>
         <input type="text" id="country" name="country" required />
+        <span class="error" aria-live="polite"></span>
       </div>
       <div>
         <label for="ZIP">ZIP code*: </label>
         <input type="text" id="ZIP" name="zip" required />
+        <span class="error" aria-live="polite"></span>
       </div>
       <div>
         <label for="pwd">Enter a password*: </label>
         <input type="text" id="pwd" name="pwd" required />
+        <span class="error" aria-live="polite"></span>
       </div>
       <div>
         <label for="confirmation-pwd">Confirm the password*: </label>
@@ -31,6 +35,7 @@
           name="confirmation-pwd"
           required
         />
+        <span class="error" aria-live="polite"></span>
       </div>
       <button>Submit</button>
     </form>

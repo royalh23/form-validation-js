@@ -33,7 +33,6 @@ form {
 form > div {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 form input {
@@ -42,6 +41,7 @@ form input {
   height: 30px;
   border: 1px solid rgb(183, 183, 183);
   border-radius: 5px;
+  margin-top: 10px;
 }
 
 form input:focus {
