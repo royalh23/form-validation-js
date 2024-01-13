@@ -37,7 +37,8 @@ form > div {
   height: 65.6px;
 }
 
-form input {
+form input,
+form select {
   outline: none;
   width: 300px;
   height: 30px;
@@ -48,11 +49,19 @@ form input {
   padding: 5px 10px;
 }
 
-form input:focus {
+form select {
+  background-color: white;
+  padding: 0.2rem;
+  font-size: 1.2rem;
+}
+
+form input:focus,
+form select:focus {
   box-shadow: 3px 3px 5px rgb(205, 205, 205);
 }
 
-form input.required:invalid {
+form input.required:invalid,
+form select.required:invalid {
   border-color: #900;
   background-color: #fdd;
 }
