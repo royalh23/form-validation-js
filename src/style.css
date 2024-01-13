@@ -59,8 +59,7 @@ form select:focus {
   box-shadow: 3px 3px 5px rgb(205, 205, 205);
 }
 
-form input.required:invalid,
-form select.required:invalid {
+form input.required:invalid {
   border-color: #900;
   background-color: #fdd;
 }
@@ -87,4 +86,9 @@ form button:active {
 
 .error.active {
   padding: 0.4rem;
+}
+
+.invalid {
+  border-color: #900;
+  background-color: #fdd;
 }
