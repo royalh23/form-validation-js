@@ -42,6 +42,8 @@ form input {
   border: 1px solid rgb(183, 183, 183);
   border-radius: 5px;
   margin-top: 10px;
+  font-size: 80%;
+  padding: 5px 10px;
 }
 
 form input:focus {
@@ -59,4 +61,15 @@ form button {
 
 form button:active {
   transform: translateY(4px);
+}
+
+.error {
+  width: 100%;
+  padding: 0;
+  font-size: 70%;
+  color: red;
+}
+
+.error.active {
+  padding: 0.4rem;
 }
