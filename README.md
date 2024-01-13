@@ -1,5 +1,2 @@
-This is a webpack template repository, which includes as default:
-
-- Webpack (devDependency);
-- ESlint (devDependency);
-- Prettier (devDependency).
+This project demonstrates a simple form that is validated using JavaScript and
+Constraint Validation API.
